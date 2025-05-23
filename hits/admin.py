@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Hit
 
-# Register your models here.
+
+@admin.register(Hit)
+class HitAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"title_url": ("title",)}
